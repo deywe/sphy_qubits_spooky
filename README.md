@@ -16,21 +16,13 @@ The underlying simulation executes directly on bare metal at $3.8\,\text{GHz}$ (
 
 ---
 
-## Theoretical Mathematical Framework
+To model multi-qubit coherence stabilization under external environmental perturbations ($p = 1.0$) without exposing proprietary low-level kernel architectures, the system relies on a generalized topological invariant functional over a compact manifold $\mathcal{M}$:
 
-To understand the stabilization of physical states under severe thermal noise ($p = 1.0$) and the integration of gravity as a core coherence factor, the system solves the deterministic wave evolution over the Clifford Torus manifold:
+$$\mathcal{S}[\Psi] = \int_{\mathcal{M}} \left( \mathfrak{G}^{\mu\nu} \nabla_\mu \Psi^\dagger \nabla_\nu \Psi - \mathcal{V}(\Psi, \Phi_{\text{grav}}) \right) \sqrt{-g} \, d^4x$$
 
-$$\frac{\partial^2 \Phi}{\partial t^2} = c^2 \nabla^2_{S^3} \Phi - \mathcal{G}_{\text{coh}}(\Phi)$$
+The non-stochastic, deterministic phase-locking operator utilized to suppress thermal noise and stochastic bit-flips is modeled via a contraction mapping over the state space:
 
-Where the Laplacian operator on the $S^3$ manifold with periodic boundary conditions is defined as:
-
-$$\nabla^2_{S^3} \Phi = \sum_{i \in \{u, v\}} \left( \frac{\Phi_{i+1} - 2\Phi_i + \Phi_{i-1}}{\Delta x^2} \right)$$
-
-The symbiotic phase filter stabilizes the field variance against stochastic bit-flips via:
-
-$$\Phi_{\text{next}}(u, v) = \Phi_{\text{next}}(u, v) \cdot (1 - \lambda) + \left( \frac{1}{4} \sum \Phi_{\text{neighbors}} \right) \cdot \lambda \left(1 - \frac{1}{\phi}\right)$$
-
-Where $\phi = 1.61803398875$ represents the golden ratio embedding absolute phase-locked metrics.
+$$\Psi^{(t+1)} = \hat{\mathcal{P}} \left[ \Psi^{(t)} \right] - \Theta \left( \Phi_{\text{grav}}, \phi \right)$$
 
 ---
 
