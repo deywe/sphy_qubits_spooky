@@ -10,7 +10,7 @@
 
 This repository provides an independent **external auditing and visualization toolkit** for the **SPHY Bare-Metal Kernel**, a deterministic low-level simulation engine designed to model 1,200 qubits under severe thermal noise ($1.0$) and stochastic bit-flips. 
 
-The underlying simulation executes directly on bare metal at $3.8\,\text{GHz}$ (derived from Silicon atomic resonance, $Z_{\text{Si}} = 14$), mapping the quantum mesh onto an isometric $40 \times 30$ bidirectional **Clifford Torus manifold ($S^3)**.
+The underlying simulation executes directly on bare metal at $3.8\,\text{GHz}$ (derived from Silicon atomic resonance), mapping the quantum mesh onto an isometric $40 \times 30$ bidirectional **Clifford Torus manifold ($S^3)**.
 
 > **Note on Intellectual Property**: The core simulation binary (`.c` low-level execution engine) is proprietary and confidential. This repository exclusively supplies the **cryptographic audit trail dataset (`.csv`)**, the **SHA-512 chain validator**, and the **LaTeX-styled statistical visualizer**.
 
